@@ -1,4 +1,4 @@
-// 1 Задача
+""" 1 Задача """
 ans = input('Идёт ли дождь? ').lower()
 if ans == "yes":
     ans2 = input('Ветрено ли на улице? ').lower()
@@ -9,30 +9,30 @@ if ans == "yes":
 else:
     print('Наслаждайтесь днём')
 
-// 2 Задача
+""" 2 Задача """
 name = input('Введите имя в нижнем регистре ').title()
 surname = input('Введите фамилию в нижнем регистре ').title()
 print(name + " " + surname)
 
-// 3 Задача
+""" 3 Задача """
 st = input('Введите строку какого-нибудь стихотворения ')
 print(len(st))
 start = int(input("введите начальную позицию "))
 end = int(input("введите конечную позицию "))
 print(st[start:end])
 
-// 4 Задача
+""" 4 Задача """
 name = input('Введите имя ')
 if len(name) < 5:
     surname = input('Введите фамилию ')
     print((name + surname).upper())
 else: print(name.lower())
 
-// 5 Задача
+""" 5 Задача """
 num = int(input('Введите число больше 500 '))
 print(round(num ** 0.5, 2))
 
-// 6 Задача
+""" 6 Задача """
 fig = input('Веведите слово круг или треугольник или прямоугольник ')
 if fig.lower() == 'круг':
     r = int(input('Введите радиус '))
