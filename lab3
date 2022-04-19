@@ -1,0 +1,41 @@
+import json
+
+file = "todo.json"
+
+
+def reader():
+    with open(file, "r") as f:
+        data = json.load(f)
+    return data
+
+
+def writer(data):
+    try:
+        with open(file, 'w') as f:
+            json.dump(data, f)
+    except Exception as e:
+        print(e)
+
+
+if __name__ == "__main__":
+    data = reader()
+
+    print("Текущие задачи из файла: ", data)
+    print("""Простой todo:
+            1. Добавить задачу.
+            2. Вывести список задач.
+            3. Выход.""")
+    num = input("Укажите число: ")
+    if num == "1":
+        (task, category, time) = (
+            input("Сформулируйте задачу: "), input("Добавьте категорию к задаче: "), input("Добавьте время к задаче: "))
+        data.append({"Задача": task, "Категория": category, "Дата": time})
+    elif num == "2":
+        for el in data:
+            for key, value in el.items():
+                print(f"{key}: {value}", end="  ")
+            print(end="\n")
+    elif num == "3":
+        writer(data)
+        print("Задачи сохранены в файл!")
+        
